@@ -1,3 +1,4 @@
+package Task;
 public class Meeting extends Task {
 
     protected String topic;
@@ -12,15 +13,27 @@ public class Meeting extends Task {
     }
 
     public String getTopic() {
+
         return topic;
     }
 
     public String getProject() {
+
         return project;
     }
 
     public String getStart() {
+
         return start;
     }
-
+    @Override
+    public boolean matches(String query) {
+        if (topic.contains(query)) {
+            return true;
+        }
+        if (project.contains(query)) {
+            return true;
+        }
+        return false;
+    }
 }
